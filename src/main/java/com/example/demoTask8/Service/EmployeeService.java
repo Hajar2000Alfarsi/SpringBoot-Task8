@@ -22,5 +22,14 @@ public class EmployeeService {
         return employeeList;
     }
 
+    public boolean validateData(String id) {
+        for (Employee employee : employeeList) {
+            if (employee.getEmployeeId().equals(id)){
+                return false;
+            }
+        }
+        return false;
+    }
+
 
 }
