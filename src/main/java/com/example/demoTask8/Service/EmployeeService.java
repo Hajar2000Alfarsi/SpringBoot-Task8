@@ -31,5 +31,11 @@ public class EmployeeService {
         return false;
     }
 
-
+    public String addEmployeeAfterValidation(Employee employee) {
+        if (validateData(employee.getEmployeeId())) {
+            employeeList.add(employee);
+            return "Employee Added Successfully";
+        }
+        return "Employee ID already exists.";
+    }
 }
