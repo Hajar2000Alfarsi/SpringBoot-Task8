@@ -15,4 +15,18 @@ public class CampaignManager {
         campaignList.add(new Campaign("C102", "Black Friday", "Google Ads",1000.0));
         campaignList.add(new Campaign("C103", "Email Promo", "Email",500.0));
     }
+
+    public String addCampaign(Campaign campaign){
+        for (Campaign c : campaignList) {
+            if (c.getCampaignId().equals(campaign.getCampaignId())) {
+                return "Campaign already exist";
+            }
+        }
+        campaignList.add(campaign);
+        return "Campaign added successfully!";
+    }
+
+    public List<Campaign> displayCampaign() {
+        return campaignList;
+    }
 }
