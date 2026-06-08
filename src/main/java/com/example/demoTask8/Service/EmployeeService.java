@@ -32,7 +32,7 @@ public class EmployeeService {
     }
 
     public String addEmployeeAfterValidation(Employee employee) {
-        if (validateData(employee.getEmployeeId())) {
+        if (!validateData(employee.getEmployeeId())) {
             employeeList.add(employee);
             return "Employee Added Successfully";
         }
