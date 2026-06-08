@@ -37,5 +37,7 @@ public class VehicleManager {
                 "***************************\n";
     }
 
-
+    public List<Vehicle> displayVehicle(){
+        return vehicleList;
+    }
 }
