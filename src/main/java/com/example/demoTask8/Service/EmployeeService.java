@@ -18,4 +18,9 @@ public class EmployeeService {
         employeeList.add(new Employee("E103","Khawla","Operation"));
     }
 
+    public List<Employee> DisplayEmployee() {
+        return employeeList;
+    }
+
+
 }
