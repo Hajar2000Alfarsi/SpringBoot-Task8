@@ -13,7 +13,7 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @PutMapping("addEmployee")
-    public String addEmployee(@RequestParam String employeeId,
+    public String addEmployee(@RequestParam Integer employeeId,
                               @RequestParam String employeeName,
                               @RequestParam String dDepartment){
         Employee newEmployee = new Employee(employeeId, employeeName, dDepartment);

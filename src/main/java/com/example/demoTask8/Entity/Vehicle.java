@@ -12,7 +12,7 @@ import lombok.NonNull;
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String vehicleId;
+    private Integer vehicleId;
     @NonNull
     private String vehicleModel;
     private Double rentalPricePerDay;

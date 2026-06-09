@@ -12,7 +12,7 @@ import lombok.NonNull;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String employeeId;
+    private Integer employeeId;
     @NonNull
     private String employeeName;
     private String dDepartment;

@@ -13,16 +13,16 @@ public class EmployeeService {
 
     @PostConstruct
     public void addEmployee() {
-        employeeList.add(new Employee("E101","Ahmed","IT"));
-        employeeList.add(new Employee("E102","Fatma","HR"));
-        employeeList.add(new Employee("E103","Khawla","Operation"));
+        employeeList.add(new Employee(101,"Ahmed","IT"));
+        employeeList.add(new Employee(102,"Fatma","HR"));
+        employeeList.add(new Employee(103,"Khawla","Operation"));
     }
 
     public List<Employee> DisplayEmployee() {
         return employeeList;
     }
 
-    public boolean validateData(String id) {
+    public boolean validateData(Integer id) {
         for (Employee employee : employeeList) {
             if (employee.getEmployeeId().equals(id)){
                 return false;

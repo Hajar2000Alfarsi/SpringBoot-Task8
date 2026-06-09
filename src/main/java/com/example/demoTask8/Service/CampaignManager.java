@@ -11,9 +11,9 @@ public class CampaignManager {
     List<Campaign> campaignList = new ArrayList<>();
 
     public void addData(){
-        campaignList.add(new Campaign("C101", "Summer Sale", "Instagram",500.0));
-        campaignList.add(new Campaign("C102", "Black Friday", "Google Ads",1000.0));
-        campaignList.add(new Campaign("C103", "Email Promo", "Email",500.0));
+        campaignList.add(new Campaign(101, "Summer Sale", "Instagram",500.0));
+        campaignList.add(new Campaign(102, "Black Friday", "Google Ads",1000.0));
+        campaignList.add(new Campaign(103, "Email Promo", "Email",500.0));
     }
 
     public String addCampaign(Campaign campaign){

@@ -15,7 +15,7 @@ public class VehicleController {
     VehicleManager vehicleManager;
 
     @PutMapping("addVehicle")
-    public String addVehicle(@RequestParam String vehicleId,
+    public String addVehicle(@RequestParam Integer vehicleId,
                              @RequestParam String vehicleModel,
                              @RequestParam Double rentalPricePerDay) {
         Vehicle newVehicle = new Vehicle(vehicleId, vehicleModel, rentalPricePerDay);

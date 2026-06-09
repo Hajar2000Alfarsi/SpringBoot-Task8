@@ -14,7 +14,7 @@ public class CampaignController {
     CampaignManager campaignManager;
 
     @PutMapping("addCampaign")
-    public String addCampaign(@RequestParam String campaignId,
+    public String addCampaign(@RequestParam Integer campaignId,
                               @RequestParam String campaignName,
                               @RequestParam String platform,
                               @RequestParam Double budget) {

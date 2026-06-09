@@ -13,9 +13,9 @@ public class VehicleManager {
 
     @PostConstruct
     public void AddData(){
-        vehicleList.add(new Vehicle("V101", "Toyota Corolla", 20.00));
-        vehicleList.add(new Vehicle("V102", "Nissan Sunny", 18.00));
-        vehicleList.add(new Vehicle("V103", "Hyundai Elantra", 22.00));
+        vehicleList.add(new Vehicle(101, "Toyota Corolla", 20.00));
+        vehicleList.add(new Vehicle(102, "Nissan Sunny", 18.00));
+        vehicleList.add(new Vehicle(103, "Hyundai Elantra", 22.00));
     }
 
     public String AddVehicle(Vehicle vehicle) {

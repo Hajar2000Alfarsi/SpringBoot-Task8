@@ -12,7 +12,7 @@ import lombok.NonNull;
 public class Campaign {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private String campaignId;
+    private Integer campaignId;
     @NonNull
     private String campaignName;
     private String platform;
