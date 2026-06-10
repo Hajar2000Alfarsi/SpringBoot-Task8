@@ -52,5 +52,16 @@ public class EmployeeService {
         throw new Exception ("Invalid Data");
     }
 
+    public Boolean deleteEmployeeById(Integer id) {
+        Employee employeeToDelete = employeeRepository.getEmployeeById(id);
+
+        if (employeeToDelete !=  null) {
+            employeeToDelete.setIsActive(false);
+            employeeRepository.save(employeeToDelete);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }
