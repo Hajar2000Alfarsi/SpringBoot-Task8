@@ -37,6 +37,20 @@ public class EmployeeService {
         return employeeRepository.getEmployeeByName(name);
     }
 
+    public Employee updateEmployee(Employee updateEmployee) throws Exception {
+        Employee existingEmployee = employeeRepository.getEmployeeById(updateEmployee.getEmployeeId());
+
+        if (existingEmployee != null) {
+            if (!existingEmployee.getEmployeeName().equals(updateEmployee.getEmployeeName())) {
+                existingEmployee.setEmployeeName(updateEmployee.getEmployeeName());
+            }
+            if (!existingEmployee.getDDepartment().equals(updateEmployee.getDDepartment())) {
+                existingEmployee.setDDepartment(updateEmployee.getDDepartment());
+            }
+            return employeeRepository.save(existingEmployee);
+        }
+        throw new Exception ("Invalid Data");
+    }
 
 
 }
