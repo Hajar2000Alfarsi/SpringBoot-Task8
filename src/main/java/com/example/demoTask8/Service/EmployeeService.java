@@ -20,8 +20,21 @@ public class EmployeeService {
 
         newEmployee.setEmployeeName(employee.getEmployeeName());
         newEmployee.setDDepartment(employee.getDDepartment());
+        newEmployee.setIsActive(true);
 
         return employeeRepository.save(newEmployee);
+    }
+
+    public List<Employee> getAllEmployee() {
+        return employeeRepository.getAllActiveEmployee();
+    }
+
+    public Employee getEmployeeById(Integer id) {
+        return employeeRepository.getEmployeeById(id);
+    }
+
+    public Employee getEmployeeByName(String name) {
+        return employeeRepository.getEmployeeByName(name);
     }
 
 

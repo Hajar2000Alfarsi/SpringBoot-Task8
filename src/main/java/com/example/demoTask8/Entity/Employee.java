@@ -18,4 +18,5 @@ public class Employee {
     @NonNull
     private String employeeName;
     private String dDepartment;
+    private Boolean isActive;
 }
