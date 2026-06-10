@@ -1,7 +1,9 @@
 package com.example.demoTask8.Service;
 
 import com.example.demoTask8.Entity.Employee;
+import com.example.demoTask8.Repository.EmployeeRepository;
 import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,33 +11,19 @@ import java.util.List;
 
 @Service
 public class EmployeeService {
-    List<Employee> employeeList = new ArrayList<>();
+    @Autowired
+    EmployeeRepository employeeRepository;
 
-    @PostConstruct
-    public void addEmployee() {
-        employeeList.add(new Employee(101,"Ahmed","IT"));
-        employeeList.add(new Employee(102,"Fatma","HR"));
-        employeeList.add(new Employee(103,"Khawla","Operation"));
+    public Employee addEmployee(Employee employee) {
+
+        Employee newEmployee = new Employee();
+
+        newEmployee.setEmployeeName(employee.getEmployeeName());
+        newEmployee.setDDepartment(employee.getDDepartment());
+
+        return employeeRepository.save(newEmployee);
     }
 
-    public List<Employee> DisplayEmployee() {
-        return employeeList;
-    }
 
-    public boolean validateData(Integer id) {
-        for (Employee employee : employeeList) {
-            if (employee.getEmployeeId().equals(id)){
-                return false;
-            }
-        }
-        return false;
-    }
 
-    public String addEmployeeAfterValidation(Employee employee) {
-        if (!validateData(employee.getEmployeeId())) {
-            employeeList.add(employee);
-            return "Employee Added Successfully";
-        }
-        return "Employee ID already exists.";
-    }
 }
