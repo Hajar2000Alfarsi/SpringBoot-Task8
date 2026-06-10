@@ -13,18 +13,33 @@ public class CampaignController {
     @Autowired
     CampaignManager campaignManager;
 
-    @PutMapping("addCampaign")
-    public String addCampaign(@RequestParam Integer campaignId,
-                              @RequestParam String campaignName,
-                              @RequestParam String platform,
-                              @RequestParam Double budget) {
-        Campaign campaign = new Campaign(campaignId, campaignName, platform, budget);
+    @PostMapping("add")
+    public Campaign AddCampaign(@RequestBody Campaign campaign) {
         return campaignManager.addCampaign(campaign);
     }
 
-    @GetMapping("displayCampaign")
-    public List<Campaign> displayCampaign() {
-        return campaignManager.displayCampaign();
+    @GetMapping("getAll")
+    public List<Campaign> getAllCampaign(){
+        return campaignManager.getAllCampaign();
     }
 
+    @GetMapping("byId")
+    public Campaign getCampaignById(@RequestParam Integer id) {
+        return campaignManager.getCampaignById(id);
+    }
+
+    @GetMapping("byName")
+    public Campaign getCampaignByName(@RequestParam String name) {
+        return campaignManager.getCampaignByName(name);
+    }
+
+    @PutMapping("Update")
+    public Campaign updateCampaign(@RequestBody Campaign campaign) throws Exception{
+        return campaignManager.updateCampaign(campaign);
+    }
+
+    @DeleteMapping("Delete")
+    public Boolean deleteCampaign(@RequestParam Integer id) {
+        return campaignManager.deleteCampaignById(id);
+    }
 }
