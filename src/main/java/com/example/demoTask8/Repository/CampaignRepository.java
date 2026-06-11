@@ -17,6 +17,6 @@ public interface CampaignRepository extends JpaRepository<Campaign,Integer> {
     @Query("Select c from Campaign c where c.isActive=true AND c.campaignId=:id")
     Campaign getCampaignById(@Param("id") Integer id);
 
-    @Query("Select c from Campaign c where c.isActive=true AND e.campaignName=:nm")
+    @Query("Select c from Campaign c where c.isActive=true AND c.campaignName=:nm")
     Campaign getCampaignByName(@Param("nm") String name);
 }

@@ -17,6 +17,6 @@ public interface VehicleRepository extends JpaRepository<Vehicle,Integer> {
     @Query("Select v from Vehicle v where v.isActive=true AND v.vehicleId=:id")
     Vehicle getVehicleById(@Param("id") Integer id);
 
-    @Query("Select v from Vehicle v where v.isActive=true AND v.vehicleName=:nm")
+    @Query("Select v from Vehicle v where v.isActive=true AND v.vehicleModel=:nm")
     Vehicle getVehicleByModel(@Param("nm") String name);
 }
